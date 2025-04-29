@@ -1,0 +1,13 @@
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+
+[dev]
+  command = "bun run dev"
+  port = 5173
+  targetPort = 5173
+  publish = "dist"
+  framework = "#custom"

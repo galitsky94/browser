@@ -1,0 +1,283 @@
+/* Base styles */
+:root {
+  --primary-color: #ff5e5e;
+  --secondary-color: #ff9d5c;
+  --dark-color: #333;
+  --warning-color: #ffcc00;
+  --success-color: #4caf50;
+  --danger-color: #f44336;
+  --text-color: #333;
+  --light-color: #f4f4f4;
+  --bg-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--bg-gradient);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.warning-box {
+  background-color: #fff3cd;
+  border: 2px dashed var(--warning-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.warning-box h2 {
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.warning-box p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--bg-gradient);
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 94, 94, 0.4);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 94, 94, 0.5);
+}
+
+.small-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.status-box {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.hidden {
+  display: none;
+}
+
+#progress {
+  margin-top: 1rem;
+}
+
+#progress-text {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.progress-bar-container {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--bg-gradient);
+  transition: width 0.3s ease;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-primary:active {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  header {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    padding: 0.75rem;
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 6px;
+  }
+
+  main {
+    padding: 0.25rem;
+  }
+
+  .warning-box {
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1px;
+  }
+
+  .warning-box h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .warning-box p {
+    font-size: 0.9rem;
+    padding: 0 0.25rem;
+  }
+
+  .controls {
+    margin-bottom: 1.5rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .small-text {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+  }
+
+  .status-box {
+    width: 96%;
+    margin: 0 auto;
+    padding: 0.8rem;
+    border-radius: 6px;
+  }
+
+  #progress {
+    margin-top: 1rem;
+  }
+
+  .progress-bar-container {
+    height: 14px;
+  }
+}

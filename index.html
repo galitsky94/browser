@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser History Ruiner</title>
+  <meta name="description" content="A fun site that ruins your browser history with random Google searches" />
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <h1>Browser History Ruiner</h1>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="warning-box">
+          <h2>⚠️ WARNING ⚠️</h2>
+          <p>This tool will perform a series of embarrassing Google searches. Use at your own risk! The creator takes no responsibility for awkward conversations that may result.</p>
+        </div>
+
+        <div class="controls">
+          <div class="button-container">
+            <button id="start-button" class="btn btn-primary">Start Ruining My History</button>
+            <p class="small-text">(and probably my life too)</p>
+          </div>
+        </div>
+
+        <div class="status-box">
+          <div id="progress">
+            <div id="progress-text">0/0 searches completed</div>
+            <div class="progress-bar-container">
+              <div id="progress-bar" class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
